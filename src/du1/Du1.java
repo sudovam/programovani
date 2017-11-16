@@ -44,15 +44,17 @@ public class Du1 {
             }
             
             System.out.println("\nPoledniky: ");
-//          vypocet_x();
-            for (int v=-180; v<=180 ; v= v+10){
-            double x = R * 100000 * (v * (Math.PI/180)) / scale;
-            if (x > 100 || x < -100) 
-                    System.out.print("-, ");
-            else
-            System.out.format("%.1f " , x);
+            double x;
+            vypocet_x();
+            
+//            for (int v=-180; v<=180 ; v= v+10){
+//            double x = R * 100000 * (v * (Math.PI/180)) / scale;
+//            if (x > 100 || x < -100) 
+//                    System.out.print("-, ");
+//            else
+//            System.out.format("%.1f " , x);
             }
-        }
+        
 //        MARINOVO ZOBRAZENÍ  
         else if (pismeno == 'A'){
             System.out.println("Rovnobezky: ");         
@@ -127,11 +129,12 @@ public class Du1 {
         for ( v=-180; v<=180 ; v= v+10){
             x = R * 100000 * (v * (Math.PI/180)) / scale;
             }
-        if (x > 100 || x < -100) 
-                System.out.print("-, ");
-        else
-            System.out.format("%.1f " , x);    
-        return 0;    
+        
+//        if (x > 100 || x < -100) 
+//                System.out.print("-, ");
+//        else
+//            System.out.format("%.1f " , x);    
+        return x;    
     }
         
       
