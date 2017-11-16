@@ -35,7 +35,7 @@ public class Du1 {
         if (pismeno =='L'){                        
             System.out.println("Rovnobezky: ");           
             for (int u = -90; u<=90; u= u+10){
-            double y = (R * Math.sin(u * (Math.PI/180)) * 100000) / scale;
+            double y = (R * Math.sin(u * (Math.PI/180)) * 100000) / scale;     
             
             if (y > 100 || y < -100) 
                     System.out.print("-, ");
@@ -44,17 +44,15 @@ public class Du1 {
             }
             
             System.out.println("\nPoledniky: ");
-            double x;
-            vypocet_x();
-            
-//            for (int v=-180; v<=180 ; v= v+10){
-//            double x = R * 100000 * (v * (Math.PI/180)) / scale;
-//            if (x > 100 || x < -100) 
-//                    System.out.print("-, ");
-//            else
-//            System.out.format("%.1f " , x);
+//            vypocet_x();
+            for (int v=-180; v<=180 ; v= v+10){
+            double x = R * 100000 * (v * (Math.PI/180)) / scale;
+            if (x > 100 || x < -100) 
+                    System.out.print("-, ");
+            else
+            System.out.format("%.1f " , x);
             }
-        
+        }
 //        MARINOVO ZOBRAZENÍ  
         else if (pismeno == 'A'){
             System.out.println("Rovnobezky: ");         
@@ -120,21 +118,20 @@ public class Du1 {
             System.out.println("Neplatná hodnota");
     }
 
-    public static double vypocet_x() throws IOException{
+    public static void vypocet_x() throws IOException{
         double R = 6371.11;
-        int scale = readInt();
+        int scale=readInt();
         int v;
-        double x = 0;
         System.out.println("Poledniky: ");
         for ( v=-180; v<=180 ; v= v+10){
-            x = R * 100000 * (v * (Math.PI/180)) / scale;
-            }
+            double x = R * 100000 * (v * (Math.PI/180)) / scale;
+            
         
-//        if (x > 100 || x < -100) 
-//                System.out.print("-, ");
-//        else
-//            System.out.format("%.1f " , x);    
-        return x;    
+        if (x > 100 || x < -100) 
+                System.out.print("-, ");
+        else
+            System.out.format("%.1f " , x);        
+        }
     }
         
       
@@ -158,4 +155,4 @@ public class Du1 {
         return  s.next().charAt(0);
     }
 }
- 
+
